@@ -50,7 +50,7 @@ return [
             ],
         ],
 
-        // Custom date column example (for charts view configuration)
+        // Custom date column example
         'events' => [
             'name'        => 'Events',
             'link'        => 'entries/events',
@@ -65,12 +65,12 @@ return [
         'sports-news-ratio' => [
             'name'         => 'Sports News',
             'total'        => $sportsNewsTotal / $newsTotal * 100,
-            'numberFormat' => '{{ total|number_format(1) }} %',
+            'numberFormat' => '{{ total|number_format(1) }}%',
         ],
         'health-news-ratio' => [
             'name'         => 'Health News',
             'total'        => $healthNewsTotal / $newsTotal * 100,
-            'numberFormat' => '{{ total|number_format(1) }} %',
+            'numberFormat' => '{{ total|number_format(1) }}%',
         ],
 
         // Matrix block element type example
