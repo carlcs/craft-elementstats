@@ -1,0 +1,18 @@
+{% if stat and not error %}
+    <div class="stats-container">
+        <ul class="stats stats--single">
+            {% include 'elementstats/widgets/stats/_item.html' with {
+                stat: stat,
+                total: total,
+            } %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if not stat %}
+    <div class="error">{{ 'Could not find the selected stat.'|t }}</div>
+{% endif %}
+
+{% if error %}
+    <div class="error">{{ 'There was an error while generating the stats.'|t }}</div>
+{% endif %}

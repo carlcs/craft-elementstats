@@ -1,0 +1,74 @@
+{% import '_includes/forms' as forms %}
+
+{% set isNewWidget = settings.view == null %}
+
+{% set viewOptions = [
+    { label: 'Grid'|t, value: 'grid' },
+    { label: 'List'|t, value: 'list' },
+    { label: 'Single  '|t, value: 'single' },
+    { label: 'Chart'|t, value: 'chart' },
+] %}
+
+{% set dateRangeOptions = [
+    { label: 'Last 7 days'|t, value: 'd7' },
+    { label: 'Last 30 days'|t, value: 'd30' },
+    { label: 'Last Week'|t, value: 'lastweek' },
+    { label: 'Last Month'|t, value: 'lastmonth' },
+] %}
+
+{{ forms.textField({
+    label: 'Title'|t,
+    id: 'title',
+    name: 'title',
+    value: settings.title,
+    required: true,
+    errors: settings.getErrors('title')
+}) }}
+
+{% if statsOptions %}
+    {{ forms.selectField({
+        label: 'View'|t,
+        id: 'view',
+        class: 'viewselect',
+        name: 'view',
+        options: viewOptions,
+        value: settings.view,
+        errors: settings.getErrors('view'),
+    }) }}
+
+    <div data-toggle-view="grid list" {% if not isNewWidget and settings.view not in ['grid', 'list'] %}class="hidden"{% endif %}>
+        {{ forms.checkboxSelectField({
+            label: 'Stats'|t,
+            id: 'statHandles',
+            name: 'statHandles',
+            options: statsOptions,
+            showAllOption: false,
+            values: settings.statHandles,
+            errors: settings.getErrors('statHandles'),
+        }) }}
+    </div>
+
+    <div data-toggle-view="single chart" {% if settings.view not in ['single', 'chart'] %}class="hidden"{% endif %}>
+        {{ forms.selectField({
+            label: 'Stat'|t,
+            id: 'statHandle',
+            name: 'statHandle',
+            options: statsOptions,
+            value: settings.statHandle,
+            errors: settings.getErrors('statHandle'),
+        }) }}
+    </div>
+
+    <div data-toggle-view="chart" {% if settings.view not in ['chart'] %}class="hidden"{% endif %}>
+        {{ forms.selectField({
+            label: 'Date Range'|t,
+            id: 'dateRange',
+            name: 'dateRange',
+            options: dateRangeOptions,
+            value: settings.dateRange,
+            errors: settings.getErrors('dateRange')
+        }) }}
+    </div>
+{% else %}
+    <p>{{ 'No stats pre-configured.'|t }}</p>
+{% endif %}

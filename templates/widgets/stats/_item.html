@@ -1,0 +1,12 @@
+<li class="stats__item {{ itemClass ?? null }}">
+    {% if stat.link %}
+        <a href="{{ cpUrl(stat.link) }}">
+    {% endif %}
+    <div>
+        <span class="stats__value">{{ total }}</span>
+        <span class="stats__label light">{{ stat.name }}</span>
+    </div>
+    {% if stat.link %}
+        </a>
+    {% endif %}
+</li>

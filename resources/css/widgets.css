@@ -1,0 +1,123 @@
+/**
+ * Widget Settings
+ */
+
+.elementstats_stats div[data-toggle-view] {
+  margin-top: 24px;
+}
+
+/**
+ * Chart Widget
+ */
+
+.elementstats_stats .chart {
+  height: 200px;
+  margin: -10px -24px;
+}
+
+/**
+ * Grid, List and Single Widget
+ */
+
+.elementstats_stats .stats-container {
+  overflow: hidden;
+}
+
+.stats__item a {
+  display: block;
+}
+
+.stats__item a:hover {
+  text-decoration: none;
+}
+
+.stats__value,
+.stats__label {
+  display: block;
+}
+
+.stats__value {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/**
+ * Grid and List Widget
+ */
+
+.stats--grid,
+.stats--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  margin: -10px -8px -8px -7px;
+}
+
+.stats--list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.stats--grid .stats__item,
+.stats--list .stats__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100px;
+          flex: 1 0 100px;
+  box-sizing: border-box;
+  border-right: 1px dotted #e3e5e8;
+  border-bottom: 1px dotted #e3e5e8;
+}
+
+.stats--grid .stats__item.last:nth-child(-n+3) {
+  border-right: none;
+}
+
+.stats--list .stats__item {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.stats--list .stats__item:first-of-type {
+  border-top: 1px dotted #e3e5e8;
+}
+
+.stats--grid .stats__item:empty,
+.stats--list .stats__item:empty {
+  height: 0;
+  border: none;
+}
+
+.stats--grid .stats__item div,
+.stats--list .stats__item div {
+  display: block;
+  padding: 10px 7px 7px 7px;
+}
+
+/**
+ * Single Widget
+ */
+
+.stats--single {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 70px;
+}
+
+.stats--single .stats__item div {
+  padding: 0 15px 10px 15px;
+  text-align: center;
+}
+
+.stats--single .stats__value {
+  font-size: 52px;
+  line-height: 1.1;
+}

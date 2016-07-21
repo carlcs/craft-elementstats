@@ -1,0 +1,28 @@
+{% if stats and not error %}
+    <div class="stats-container">
+        {% set statsClasses = 'stats--' ~ settings.view %}
+
+        <ul class="stats {{ statsClasses }}">
+            {% for stat in stats %}
+                {% include 'elementstats/widgets/stats/_item.html' with {
+                    stat: stat,
+                    total: totals[stat.handle],
+                    itemClass: loop.last ? 'last',
+                } %}
+            {% endfor %}
+
+            {# Can we please use CSS grid layout already... #}
+            {% for i in 1..10 %}
+                <li class="stats__item"></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if not stats %}
+    <div class="error">{{ 'No stat selected.'|t }}</div>
+{% endif %}
+
+{% if error %}
+    <div class="error">{{ 'There was an error while generating the stats.'|t }}</div>
+{% endif %}
