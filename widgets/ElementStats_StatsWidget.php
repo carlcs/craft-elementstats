@@ -6,11 +6,21 @@ class ElementStats_StatsWidget extends BaseWidget
     // Public Methods
     // =========================================================================
 
+    /**
+     * Returns the widget's name.
+     *
+     * @return string
+     */
     public function getName()
     {
         return 'Element Stats';
     }
 
+    /**
+     * Returns the widget's title.
+     *
+     * @return string
+     */
     public function getTitle()
     {
         $settings = $this->getSettings();
@@ -18,6 +28,11 @@ class ElementStats_StatsWidget extends BaseWidget
         return Craft::t($settings->title);
     }
 
+    /**
+     * Returns the widget's body HTML.
+     *
+     * @return string
+     */
     public function getBodyHtml()
     {
         $widgetId = $this->model->id;
@@ -34,6 +49,11 @@ class ElementStats_StatsWidget extends BaseWidget
         }
     }
 
+    /**
+     * Returns the widget's settings HTML.
+     *
+     * @return string
+     */
     public function getSettingsHtml()
     {
         craft()->templates->includeCssResource('elementstats/css/widgets.css');
@@ -57,6 +77,11 @@ class ElementStats_StatsWidget extends BaseWidget
     // Protected Methods
     // =========================================================================
 
+    /**
+     * Returns the HTML for a list widget.
+     *
+     * @return string
+     */
     protected function getListHtml($widgetId, $settings)
     {
         $stats = [];
@@ -88,6 +113,11 @@ class ElementStats_StatsWidget extends BaseWidget
         ]);
     }
 
+    /**
+     * Returns the HTML for a single widget.
+     *
+     * @return string
+     */
     protected function getSingleHtml($widgetId, $settings)
     {
         $stat = craft()->elementStats_stats->getStatByHandle($settings->statHandle);
@@ -102,6 +132,11 @@ class ElementStats_StatsWidget extends BaseWidget
         ]);
     }
 
+    /**
+     * Returns the HTML for a chart widget.
+     *
+     * @return string
+     */
     protected function getChartHtml($widgetId, $settings)
     {
         $options = $settings->getAttributes();
@@ -112,6 +147,11 @@ class ElementStats_StatsWidget extends BaseWidget
         return '<div></div>';
     }
 
+    /**
+     * Defines the settings.
+     *
+     * @return array
+     */
     protected function defineSettings()
     {
         return [

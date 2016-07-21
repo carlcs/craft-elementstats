@@ -6,6 +6,9 @@ class ElementStats_StatsService extends BaseApplicationComponent
     // Properties
     // =========================================================================
 
+    /**
+     * @var array
+     */
     private $_statsConfig;
 
     // Public Methods
@@ -39,6 +42,11 @@ class ElementStats_StatsService extends BaseApplicationComponent
         }
     }
 
+    /**
+     * Returns an array of stats configurations from the config.php.
+     *
+     * @return array
+     */
     public function getStatsConfig()
     {
         if (!$this->_statsConfig) {
@@ -61,6 +69,13 @@ class ElementStats_StatsService extends BaseApplicationComponent
     // Protected Methods
     // =========================================================================
 
+    /**
+     * Returns the default stats date column for an element type.
+     *
+     * @param string $elementType
+     *
+     * @return string|null
+     */
     protected function getDefaultDateColumn($elementType)
     {
         $defaultDateColumns = craft()->config->get('defaultDateColumns', 'elementstats');

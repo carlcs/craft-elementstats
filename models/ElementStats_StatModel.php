@@ -3,6 +3,14 @@ namespace Craft;
 
 class ElementStats_StatModel extends BaseModel
 {
+    // Protected Methods
+    // =========================================================================
+
+    /**
+     * Returns the formatted total value for the stat.
+     *
+     * @return string|null
+     */
     public function getTotal()
     {
         $total = $this->total;
