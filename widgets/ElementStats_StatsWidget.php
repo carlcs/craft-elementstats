@@ -8,7 +8,7 @@ class ElementStats_StatsWidget extends BaseWidget
 
     public function getName()
     {
-        return Craft::t('Element Stats');
+        return 'Element Stats';
     }
 
     public function getTitle()

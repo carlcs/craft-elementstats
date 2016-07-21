@@ -32,6 +32,11 @@ class ElementStats_StatModel extends BaseModel
         return $total;
     }
 
+    /**
+     * Returns the element criteria based on the stat's params.
+     *
+     * @return ElementCriteriaModel|null
+     */
     public function getCriteria($additionalCriteria = null)
     {
         $criteria = craft()->elements->getCriteria($this->elementType);
@@ -42,7 +47,8 @@ class ElementStats_StatModel extends BaseModel
 
         // TODO: prevent fatal errors thrown by buildElementsQuery
         if (!craft()->elements->buildElementsQuery($criteria)) {
-            throw new \Exception(Craft::t('Couldn’t find any elements with the given parameters.'));
+            ElementStatsPlugin::log('There was an error while generating the stats. '.$e->getMessage(), LogLevel::Error);
+            throw new \Exception(Craft::t('There was an error while generating the stats.'));
         }
 
         return $criteria;
