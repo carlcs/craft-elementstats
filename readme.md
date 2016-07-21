@@ -14,7 +14,7 @@ $ composer require carlcs/craft-elementstats
 
 To configure the plugin you need to create a file named elementstats.php in the craft/config/ folder. This is where you configure the stats available in your widgets.
 
-Place all of your stats configurations in a nested array with the key `stats`. The configurations themselves have to be arrays with an array key which will be used to identify the stat. Within that array you can use the following stats config settings:
+Place all of your stats configurations in a nested array with the key `stats`. The configurations themselves have to be arrays with an unique array key which will be used to identify the stat. Within that array you can use the following stat config settings:
 
 - **`name`** – What the stat will be called in the widget.
 - **`link`** – Where the link in your widget will lead. The setting expects a Control Panel URI.
