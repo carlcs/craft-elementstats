@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.0.1",
+    "downloadUrl": "https://github.com/carlcs/craft-elementstats/archive/v1.0.1.zip",
+    "date": "2016-07-21T22:00:00+01:00",
+    "notes": [
+      "[Improved] Improved German translations."
+    ]
+  },
+  {
     "version": "1.0.0",
     "downloadUrl": "https://github.com/carlcs/craft-elementstats/archive/v1.0.0.zip",
     "date": "2016-07-21T19:00:00+01:00",
