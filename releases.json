@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.0.2",
+    "downloadUrl": "https://github.com/carlcs/craft-elementstats/archive/v1.0.2.zip",
+    "date": "2016-07-24T20:00:00+01:00",
+    "notes": [
+      "[Added] Added plugin and widget icons."
+    ]
+  },
+  {
     "version": "1.0.1",
     "downloadUrl": "https://github.com/carlcs/craft-elementstats/archive/v1.0.1.zip",
     "date": "2016-07-21T22:00:00+01:00",
